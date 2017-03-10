@@ -1,11 +1,11 @@
 {
-  "name": "bidmaster-catalog-service",
-  "version": "1.0.0",
+  "name": "amqp-connector",
+  "version": "1.0.1",
   "description": "",
-  "main": "./build/main.js",
+  "main": "./main",
+  "types": "./main.d.ts",
   "scripts": {
-    "build": "tsc",
-    "start": "npm run build && node build/main"
+    "build": "tsc"
   },
   "author": "Oscar Lemström",
   "license": "MIT",
