@@ -15,7 +15,7 @@
     ]
   },
   "exclude": [
-    "node_modules", "build"
+    "node_modules", "build", "main.js", "main.d.ts"
   ],
   "filesGlob": [ "./src/**/*.ts" ]
 }

@@ -27,7 +27,7 @@ export class AmqpConnector {
 
     constructor(url: string, exchange: ExchangeOptions = { name: 'default-fanout', type: 'fanout'} ) {
         this.channel = amqp.connect(url)
-            .then(c => c.createChannel)
+            .then(c => c.createChannel())
             .catch((error: Error) => {
                 throw error
             });
