@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "esnext",
+    "target": "es5",
     "noImplicitAny": true,
-    "sourceMap": true,
-    "outDir": "./build",
+    "declaration": true,
+    "inlineSourceMap": true,
+    "outDir": "./",
     "lib": [
       "dom",
       "es5",
