@@ -16,5 +16,6 @@ export declare class AmqpConnector {
     constructor(url: string, queue: string, exchange?: ExchangeOptions);
     publish(topic: string, message: any): Promise<any>;
     listen(topic: string): Observable<any>;
+    listenAll(): Observable<any>;
     private initialiseListen;
 }

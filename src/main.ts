@@ -68,6 +68,18 @@ export class AmqpConnector {
             });
     }
 
+    listenAll(): Observable<any> {
+        return Observable.fromPromise(
+                this.channel.then(channel => channel.bindQueue(this.queue, this.exchange, '#'))
+            )
+            .switchMap(() => this.listener.asObservable())
+            .filter(val => Boolean(val))
+            .catch((err: Error) => {
+                console.error(err);
+                return Observable.throw(err);
+            });
+    }
+
     private initialiseListen = (queue: string, channel: Channel): Observable<MessageInfo> => {
         channel.assertQueue(queue)
             .then(() => channel.consume(queue, (msg: Message) => {
